@@ -1,0 +1,9 @@
+==>>
+All the code for this chapter is actually in the following folder:
+
+intgo/ch08/math
+
+This chapter is on testing, and we have test programs on the custom package
+created in Chapter 8. The exercises are not named as "exNN.go", but are
+implemented as modifications in existing Go programs.
+

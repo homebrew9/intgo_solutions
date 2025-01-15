@@ -1,0 +1,53 @@
+1. sum is a function that takes a slice of numbers and adds them together.
+   What would its function signature look like in Go?
+
+func sum(x ...int) int {
+    var total int
+    for _, value := range x {
+        total += value
+    }
+    return total
+}
+
+>> This is incorrect. "sum" is not a variadic function. It accepts a slice of
+ints as input!!
+func sum(xs []int) int {
+    //body
+}
+===============================================================================================
+6. What are defer, panic, and recover? How do you recover from a runtime panic?
+
+=> Looks like they are constructs in Golang to handle errors.
+defer keyword defers a function call to after the following function is
+called. It is used for cases like file closing, database connection closing
+etc. It can also be used with recover() function to handle panic/recover
+situation.
+panic is used to raise an error. panic("Error message"). Looks like it
+terminates the program and escalates the control to the invoker.
+recover is used to handle the error thrown by panic. Since recover() right
+after the panic will never be called, we use it in a defer block right before
+the panic construct.
+
+===============================================================================================
+7. How do you get the memory address of a variable?
+
+The memory address of a variable x is &x. We get the memory address of a
+variable by prefixing the "&" before it.
+
+===============================================================================================
+8. How do you assign a value to a pointer?
+
+If xPtr is a pointer to, say, an int then we assign the value 10 as follows:
+*xPtr = 10
+
+===============================================================================================
+9. How do you create a new pointer?
+
+Using the new() function.
+
+ptr := new(int)
+
+creates a pointer called "ptr" to an int. It takes care of allocating the
+required memory size for the int type.
+
+
